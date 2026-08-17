@@ -72,7 +72,12 @@ export const de: Translations = {
     title: 'Einstellungen',
     language: 'Sprache',
     languages: { de: 'Deutsch', en: 'Englisch (English)' },
-    dark: 'Dunkles Design',
+    theme: 'Darstellung',
+    themes: {
+      system: 'Systemstandard',
+      light: 'Hell',
+      dark: 'Dunkel',
+    },
     mode: 'Profimodus',
     showieds: 'Zeige IEDs im Substation-Editor',
     selectFileButton: 'Datei auswählen',

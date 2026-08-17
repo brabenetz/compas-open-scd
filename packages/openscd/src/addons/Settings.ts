@@ -52,7 +52,7 @@ interface LanguageConfig {
 
 export const defaults: Settings = {
   language: 'en',
-  theme: 'light',
+  theme: 'system' as Settings['theme'],
   mode: 'safe',
   showieds: 'off',
   'IEC 61850-7-2': undefined,
@@ -138,8 +138,8 @@ export class OscdSettings extends LitElement {
   settingsUI!: Dialog;
   @query('#language')
   languageUI!: Select;
-  @query('#dark')
-  darkThemeUI!: Switch;
+  @query('#theme')
+  themeUI!: Select;
   @query('#mode')
   modeUI!: Switch;
   @query('#showieds')
@@ -180,7 +180,7 @@ export class OscdSettings extends LitElement {
       this.requestUpdate('settings');
     } else if (ae.detail?.action === 'save') {
       this.setSetting('language', <Language>this.languageUI.value);
-      this.setSetting('theme', this.darkThemeUI.checked ? 'dark' : 'light');
+      this.setSetting('theme', <Settings['theme']>this.themeUI.value);
       this.setSetting('mode', this.modeUI.checked ? 'pro' : 'safe');
       this.setSetting('showieds', this.showiedsUI.checked ? 'on' : 'off');
       this.requestUpdate('settings');
@@ -380,12 +380,22 @@ export class OscdSettings extends LitElement {
                 >`
             )}
           </mwc-select>
-          <mwc-formfield label="${translate('settings.dark')}">
-            <mwc-switch
-              id="dark"
-              ?checked=${this.settings.theme === 'dark'}
-            ></mwc-switch>
-          </mwc-formfield>
+          <mwc-select
+            fixedMenuPosition
+            id="theme"
+            icon="brightness_6"
+            label="${translate('settings.theme')}"
+          >
+            ${(['system', 'light', 'dark'] as const).map(
+              theme =>
+                html`<mwc-list-item
+                  graphic="icon"
+                  value="${theme}"
+                  ?selected=${theme === this.settings.theme}
+                  >${translate(`settings.themes.${theme}`)}</mwc-list-item
+                >`
+            )}
+          </mwc-select>
           <mwc-formfield label="${translate('settings.mode')}">
             <mwc-switch
               id="mode"

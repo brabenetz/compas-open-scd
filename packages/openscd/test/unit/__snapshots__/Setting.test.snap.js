@@ -37,10 +37,45 @@ snapshots["OSCD-Settings enables/shows the upload .nsdoc file button by default"
         German (Deutsch)
       </mwc-list-item>
     </mwc-select>
-    <mwc-formfield label="Dark theme">
-      <mwc-switch id="dark">
-      </mwc-switch>
-    </mwc-formfield>
+    <mwc-select
+      fixedmenuposition=""
+      icon="brightness_6"
+      id="theme"
+      label="Theme"
+    >
+      <mwc-list-item
+        aria-disabled="false"
+        aria-selected="true"
+        graphic="icon"
+        mwc-list-item=""
+        role="option"
+        selected=""
+        tabindex="0"
+        value="system"
+      >
+        System default
+      </mwc-list-item>
+      <mwc-list-item
+        aria-disabled="false"
+        graphic="icon"
+        mwc-list-item=""
+        role="option"
+        tabindex="-1"
+        value="light"
+      >
+        Light
+      </mwc-list-item>
+      <mwc-list-item
+        aria-disabled="false"
+        graphic="icon"
+        mwc-list-item=""
+        role="option"
+        tabindex="-1"
+        value="dark"
+      >
+        Dark
+      </mwc-list-item>
+    </mwc-select>
     <mwc-formfield label="Pro mode">
       <mwc-switch id="mode">
       </mwc-switch>
@@ -215,10 +250,45 @@ snapshots["OSCD-Settings disables/hides the upload .nsdoc file button"] =
         German (Deutsch)
       </mwc-list-item>
     </mwc-select>
-    <mwc-formfield label="Dark theme">
-      <mwc-switch id="dark">
-      </mwc-switch>
-    </mwc-formfield>
+    <mwc-select
+      fixedmenuposition=""
+      icon="brightness_6"
+      id="theme"
+      label="Theme"
+    >
+      <mwc-list-item
+        aria-disabled="false"
+        aria-selected="true"
+        graphic="icon"
+        mwc-list-item=""
+        role="option"
+        selected=""
+        tabindex="0"
+        value="system"
+      >
+        System default
+      </mwc-list-item>
+      <mwc-list-item
+        aria-disabled="false"
+        graphic="icon"
+        mwc-list-item=""
+        role="option"
+        tabindex="-1"
+        value="light"
+      >
+        Light
+      </mwc-list-item>
+      <mwc-list-item
+        aria-disabled="false"
+        graphic="icon"
+        mwc-list-item=""
+        role="option"
+        tabindex="-1"
+        value="dark"
+      >
+        Dark
+      </mwc-list-item>
+    </mwc-select>
     <mwc-formfield label="Pro mode">
       <mwc-switch id="mode">
       </mwc-switch>
@@ -375,10 +445,45 @@ snapshots["OSCD-Settings saves chosen .nsdoc file and looks like latest snapshot
         German (Deutsch)
       </mwc-list-item>
     </mwc-select>
-    <mwc-formfield label="Dark theme">
-      <mwc-switch id="dark">
-      </mwc-switch>
-    </mwc-formfield>
+    <mwc-select
+      fixedmenuposition=""
+      icon="brightness_6"
+      id="theme"
+      label="Theme"
+    >
+      <mwc-list-item
+        aria-disabled="false"
+        aria-selected="true"
+        graphic="icon"
+        mwc-list-item=""
+        role="option"
+        selected=""
+        tabindex="0"
+        value="system"
+      >
+        System default
+      </mwc-list-item>
+      <mwc-list-item
+        aria-disabled="false"
+        graphic="icon"
+        mwc-list-item=""
+        role="option"
+        tabindex="-1"
+        value="light"
+      >
+        Light
+      </mwc-list-item>
+      <mwc-list-item
+        aria-disabled="false"
+        graphic="icon"
+        mwc-list-item=""
+        role="option"
+        tabindex="-1"
+        value="dark"
+      >
+        Dark
+      </mwc-list-item>
+    </mwc-select>
     <mwc-formfield label="Pro mode">
       <mwc-switch id="mode">
       </mwc-switch>
@@ -561,10 +666,45 @@ snapshots["OSCD-Settings deletes a chosen .nsdoc file and looks like latest snap
         German (Deutsch)
       </mwc-list-item>
     </mwc-select>
-    <mwc-formfield label="Dark theme">
-      <mwc-switch id="dark">
-      </mwc-switch>
-    </mwc-formfield>
+    <mwc-select
+      fixedmenuposition=""
+      icon="brightness_6"
+      id="theme"
+      label="Theme"
+    >
+      <mwc-list-item
+        aria-disabled="false"
+        aria-selected="true"
+        graphic="icon"
+        mwc-list-item=""
+        role="option"
+        selected=""
+        tabindex="0"
+        value="system"
+      >
+        System default
+      </mwc-list-item>
+      <mwc-list-item
+        aria-disabled="false"
+        graphic="icon"
+        mwc-list-item=""
+        role="option"
+        tabindex="-1"
+        value="light"
+      >
+        Light
+      </mwc-list-item>
+      <mwc-list-item
+        aria-disabled="false"
+        graphic="icon"
+        mwc-list-item=""
+        role="option"
+        tabindex="-1"
+        value="dark"
+      >
+        Dark
+      </mwc-list-item>
+    </mwc-select>
     <mwc-formfield label="Pro mode">
       <mwc-switch id="mode">
       </mwc-switch>
@@ -741,10 +881,45 @@ snapshots["OSCD-Settings dispatches a warning if .nsdoc version and nsd version 
         German (Deutsch)
       </mwc-list-item>
     </mwc-select>
-    <mwc-formfield label="Dark theme">
-      <mwc-switch id="dark">
-      </mwc-switch>
-    </mwc-formfield>
+    <mwc-select
+      fixedmenuposition=""
+      icon="brightness_6"
+      id="theme"
+      label="Theme"
+    >
+      <mwc-list-item
+        aria-disabled="false"
+        aria-selected="true"
+        graphic="icon"
+        mwc-list-item=""
+        role="option"
+        selected=""
+        tabindex="0"
+        value="system"
+      >
+        System default
+      </mwc-list-item>
+      <mwc-list-item
+        aria-disabled="false"
+        graphic="icon"
+        mwc-list-item=""
+        role="option"
+        tabindex="-1"
+        value="light"
+      >
+        Light
+      </mwc-list-item>
+      <mwc-list-item
+        aria-disabled="false"
+        graphic="icon"
+        mwc-list-item=""
+        role="option"
+        tabindex="-1"
+        value="dark"
+      >
+        Dark
+      </mwc-list-item>
+    </mwc-select>
     <mwc-formfield label="Pro mode">
       <mwc-switch id="mode">
       </mwc-switch>
@@ -927,10 +1102,45 @@ snapshots["OSCD-Settings loads .nsdoc file with missmatched nsd version"] =
         German (Deutsch)
       </mwc-list-item>
     </mwc-select>
-    <mwc-formfield label="Dark theme">
-      <mwc-switch id="dark">
-      </mwc-switch>
-    </mwc-formfield>
+    <mwc-select
+      fixedmenuposition=""
+      icon="brightness_6"
+      id="theme"
+      label="Theme"
+    >
+      <mwc-list-item
+        aria-disabled="false"
+        aria-selected="true"
+        graphic="icon"
+        mwc-list-item=""
+        role="option"
+        selected=""
+        tabindex="0"
+        value="system"
+      >
+        System default
+      </mwc-list-item>
+      <mwc-list-item
+        aria-disabled="false"
+        graphic="icon"
+        mwc-list-item=""
+        role="option"
+        tabindex="-1"
+        value="light"
+      >
+        Light
+      </mwc-list-item>
+      <mwc-list-item
+        aria-disabled="false"
+        graphic="icon"
+        mwc-list-item=""
+        role="option"
+        tabindex="-1"
+        value="dark"
+      >
+        Dark
+      </mwc-list-item>
+    </mwc-select>
     <mwc-formfield label="Pro mode">
       <mwc-switch id="mode">
       </mwc-switch>

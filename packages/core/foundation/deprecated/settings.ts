@@ -2,7 +2,7 @@ export type Language = 'en' | 'de';
 
 export type Settings = {
   language: Language;
-  theme: 'light' | 'dark';
+  theme: 'system' | 'light' | 'dark';
   mode: 'safe' | 'pro';
   showieds: 'on' | 'off';
   'IEC 61850-7-2': string | undefined;

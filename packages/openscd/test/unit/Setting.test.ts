@@ -32,8 +32,11 @@ describe('OSCD-Settings', () => {
 
   it('saves chosen settings on save button click', async () => {
     element.settingsUI.show();
-    element.darkThemeUI.checked = true;
-    await element.darkThemeUI.updateComplete;
+    await element.settingsUI.updateComplete;
+    await element.themeUI.updateComplete;
+    await element.themeUI.layout();
+    element.themeUI.value = 'dark';
+    await element.themeUI.updateComplete;
     await (<Button>(
       element.settingsUI.querySelector('mwc-button[dialogAction="save"]')
     )).click();

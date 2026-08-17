@@ -70,7 +70,12 @@ export const en = {
     title: 'Settings',
     language: 'Language',
     languages: { de: 'German (Deutsch)', en: 'English' },
-    dark: 'Dark theme',
+    theme: 'Theme',
+    themes: {
+      system: 'System default',
+      light: 'Light',
+      dark: 'Dark',
+    },
     mode: 'Pro mode',
     showieds: 'Show IEDs in substation editor',
     selectFileButton: 'Select file',

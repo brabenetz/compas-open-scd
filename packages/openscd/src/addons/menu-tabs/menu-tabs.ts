@@ -42,15 +42,23 @@ export class OscdMenuTabs extends LitElement {
         @MDCTabBar:activated=${this.handleActivatedEditorTab}
         activeIndex=${this.activeTabIndex}
       >
-        ${ this.editors.map( EditorTab ) }
+        ${ this.editors.map((editor, i) => EditorTab(editor, i === this.activeTabIndex)) }
       </mwc-tab-bar>
     `
   }
 
   static styles = css`
+    /* Host chrome: --oscd-internal-nav-* only. Do not use global --mdc-theme-*:
+     * plugins treat --mdc-theme-on-primary as --oscd-base2. */
     mwc-tab {
-      background-color: var(--primary);
-      --mdc-theme-primary: var(--mdc-theme-on-primary);
+      background-color: var(--oscd-internal-nav-primary);
+      --mdc-tab-text-label-color-default: var(--oscd-internal-nav-primary-text);
+      --mdc-tab-color-default: var(--oscd-internal-nav-primary-text);
+      --mdc-theme-primary: var(--oscd-internal-nav-primary-text-active);
+    }
+
+    mwc-tab.active {
+      background-color: var(--oscd-internal-nav-primary-active);
     }
   `
 
@@ -71,9 +79,9 @@ export class OscdMenuTabs extends LitElement {
   }
 }
 
-function EditorTab({ name, icon }: Plugin): TemplateResult {
+function EditorTab({ name, icon }: Plugin, isActive: boolean): TemplateResult {
   return html`
-    <mwc-tab label=${name} icon=${icon || 'edit'}> </mwc-tab>
+    <mwc-tab class="${isActive ? 'active' : ''}" label=${name} icon=${icon || 'edit'}> </mwc-tab>
   `;
 }
 

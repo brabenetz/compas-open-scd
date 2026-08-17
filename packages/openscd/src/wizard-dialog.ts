@@ -23,6 +23,7 @@ import { List } from '@material/mwc-list';
 import { Menu } from '@material/mwc-menu';
 
 import { formatXml } from '@compas-oscd/xml';
+import { resolvedColorScheme } from './themes.js';
 
 import 'ace-custom-element';
 import './wizard-checkbox.js';
@@ -336,7 +337,7 @@ export class WizardDialog extends LitElement {
               wrap
               soft-tabs
               style="width: 80vw; height: calc(100vh - 240px);"
-              theme="ace/theme/solarized_${localStorage.getItem('theme')}"
+              theme="ace/theme/solarized_${resolvedColorScheme(localStorage.getItem('theme'))}"
               mode="ace/mode/xml"
               value="${formatXml(
                 new XMLSerializer().serializeToString(page.element)

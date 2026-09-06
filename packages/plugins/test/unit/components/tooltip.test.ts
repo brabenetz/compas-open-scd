@@ -2,6 +2,19 @@ import { expect, fixture, html } from '@open-wc/testing';
 import { OscdTooltip } from '../../../src/components/tooltip';
 import '../../../src/components/tooltip.js';
 
+function nextFrame(): Promise<void> {
+  return new Promise(resolve => requestAnimationFrame(() => resolve()));
+}
+
+/** `updatePosition` writes transform only in rAF — wait until it lands. */
+async function waitForTransform(el: OscdTooltip): Promise<void> {
+  await el.updateComplete;
+  for (let i = 0; i < 30; i++) {
+    if ((el.style.transform || '').includes('translate3d')) return;
+    await nextFrame();
+  }
+}
+
 describe('oscd-tooltip', () => {
   let element: OscdTooltip;
 
@@ -63,13 +76,10 @@ describe('oscd-tooltip', () => {
       expect(element.y).to.equal(312);
     });
 
-    it('should schedule position update via requestAnimationFrame', done => {
+    it('should schedule position update via requestAnimationFrame', async () => {
       element.updatePosition(150, 250);
-
-      setTimeout(() => {
-        expect(element.style.transform).to.include('translate3d');
-        done();
-      }, 20);
+      await waitForTransform(element);
+      expect(element.style.transform).to.include('translate3d');
     });
 
     it('should not schedule multiple frames if already pending', () => {
@@ -80,24 +90,18 @@ describe('oscd-tooltip', () => {
   });
 
   describe('viewport boundary handling', () => {
-    it('should adjust position if tooltip would overflow right edge', done => {
+    it('should adjust position if tooltip would overflow right edge', async () => {
       const nearRightEdge = window.innerWidth - 10;
       element.show('Long tooltip text that needs space', nearRightEdge, 100);
-
-      setTimeout(() => {
-        expect(element.style.transform).to.include('translate3d');
-        done();
-      }, 20);
+      await waitForTransform(element);
+      expect(element.style.transform).to.include('translate3d');
     });
 
-    it('should adjust position if tooltip would overflow bottom edge', done => {
+    it('should adjust position if tooltip would overflow bottom edge', async () => {
       const nearBottom = window.innerHeight - 10;
       element.show('Tooltip near bottom', 100, nearBottom);
-
-      setTimeout(() => {
-        expect(element.style.transform).to.include('translate3d');
-        done();
-      }, 20);
+      await waitForTransform(element);
+      expect(element.style.transform).to.include('translate3d');
     });
   });
 

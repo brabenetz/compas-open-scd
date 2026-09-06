@@ -4,7 +4,7 @@ Date: 2026-08-30
 
 ## Status
 
-Proposed
+WIP
 
 ## Story
 
@@ -28,7 +28,7 @@ theme="ace/theme/solarized_${resolvedColorScheme(localStorage.getItem('theme'))}
 That has three gaps:
 
 1. **Not branded.** Ace Solarized light/dark ignore `--oscd-base*` and `--oscd-*`.
-2. **Two Ace theme ids.** Light and dark are `solarized_light` / `solarized_dark`. [ADR-0005](0005-customer-branding-and-dark-mode.md) already drives light/dark via `color-scheme` + CSS variables; the editor should follow those tokens with **one** theme id.
+2. **Two Ace theme ids.** Light and dark are `solarized_light` / `solarized_dark`. The CoMPAS host ([ADR-0005 annex](0005-customer-branding-and-dark-mode-compas.md)) already drives light/dark via `color-scheme` + CSS variables; the editor should follow those tokens with **one** theme id.
 3. **Plugins diverge.** Each Ace host ships whatever it bundled:
 
 ![Example for ACE-Editor theme Problem](./assets/0007-ace-theme-oscd.png)
